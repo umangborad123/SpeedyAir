@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SpeedyAir.ly.Domain\SpeedyAir.ly.Domain.csproj" />
+    <ProjectReference Include="..\SpeedyAir.ly.SharedKernel\SpeedyAir.ly.SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

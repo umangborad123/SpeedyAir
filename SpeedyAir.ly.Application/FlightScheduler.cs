@@ -1,13 +1,14 @@
-﻿using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using SpeedyAir.ly.Application.Interface;
 using SpeedyAir.ly.Domain;
+using SpeedyAir.ly.SharedKernel;
+using System.Text;
 
 namespace SpeedyAir.ly.Application
 {
     public class FlightScheduler : IFlightScheduler
     {
-        private const int FlightCapacity = 20;
+        private const int FlightCapacity = Constants.CurrentLoadLimit;
 
         public List<Flight> Flights { get; set; }
 
@@ -24,30 +25,12 @@ namespace SpeedyAir.ly.Application
             Flights.Clear();
             Flights.AddRange(new List<Flight>()
             {
-                new()
-                {
-                    Id = 1, Departure = "YUL", Arrival = "YYZ", Day = 1
-                },
-                new()
-                {
-                    Id = 2, Departure = "YUL", Arrival = "YYC", Day = 1
-                },
-                new()
-                {
-                    Id = 3, Departure = "YUL", Arrival = "YVR", Day = 1
-                },
-                new()
-                {
-                    Id = 4, Departure = "YUL", Arrival = "YYZ", Day = 2
-                },
-                new()
-                {
-                    Id = 5, Departure = "YUL", Arrival = "YYC", Day = 2
-                },
-                new()
-                {
-                    Id = 6, Departure = "YUL", Arrival = "YVR", Day = 2
-                },
+                new(1, "YUL",  "YYZ", 1),
+                new(2, "YUL",  "YYC", 1),
+                new(3, "YUL",  "YVR", 1),
+                new(4, "YUL",  "YYZ", 2),
+                new(5, "YUL",  "YYC", 2),
+                new(6, "YUL",  "YVR", 2)
             });
         }
 
@@ -72,11 +55,7 @@ namespace SpeedyAir.ly.Application
 
                 foreach (var keyValuePair in orderDict)
                 {
-                    Orders.Add(new Order()
-                    {
-                        Id = keyValuePair.Key,
-                        Destination = keyValuePair.Value["destination"]
-                    });
+                    Orders.Add(new Order(keyValuePair.Key, keyValuePair.Value["destination"]));
                 }
             }
             catch (Exception e)
@@ -110,8 +89,9 @@ namespace SpeedyAir.ly.Application
                         continue;
                     }
 
-                    order.Flight = possibleFlight;
-                    possibleFlight.CurrentLoad++;
+                    order.SetFlight(possibleFlight);
+                    possibleFlight.IncrementCurrentLoad();
+
                     break;
                 }
             }
