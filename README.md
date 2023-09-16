@@ -1,6 +1,6 @@
 # SpeedyAir
 
-## Set SpeedyAir.ly as the startup project
+## Set SpeedyAir.ly.ConsoleApp as the startup project
 
 ## Output
 
