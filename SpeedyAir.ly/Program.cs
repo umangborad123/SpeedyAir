@@ -19,6 +19,6 @@ internal class Program
         flightScheduler.DisplayOrders();
 
         // Display full flight details including current load
-        flightScheduler.DisplayFullFlightDetails();
+        //flightScheduler.DisplayFullFlightDetails();
     }
 }
