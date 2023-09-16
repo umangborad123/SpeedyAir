@@ -6,7 +6,7 @@ namespace SpeedyAir.ly.Domain
     public class Flight
     {
         #region Public Members
-        
+
         public int Id { get; private set; }
 
         public string Departure { get; private set; } = null!;

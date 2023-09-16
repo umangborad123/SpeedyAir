@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedyAir.ly", "SpeedyAir.ly\SpeedyAir.ly.csproj", "{F661DA1F-269A-47C5-943E-80E2AD157C68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedyAir.ly.ConsoleApp", "SpeedyAir.ly.ConsoleApp\SpeedyAir.ly.ConsoleApp.csproj", "{F661DA1F-269A-47C5-943E-80E2AD157C68}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedyAir.ly.Domain", "SpeedyAir.ly.Domain\SpeedyAir.ly.Domain.csproj", "{7CD4E50D-D34D-436B-B65F-7E458D1F595E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedyAir.ly.Application", "SpeedyAir.ly.Application\SpeedyAir.ly.Application.csproj", "{1DAE01E4-C7DB-474A-A42C-B7A3BD6305D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedyAir.ly.SharedKernel", "SpeedyAir.ly.SharedKernel\SpeedyAir.ly.SharedKernel.csproj", "{C322921C-45DC-41FD-8936-26698A3CD950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedyAir.ly.SharedKernel", "SpeedyAir.ly.SharedKernel\SpeedyAir.ly.SharedKernel.csproj", "{C322921C-45DC-41FD-8936-26698A3CD950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
