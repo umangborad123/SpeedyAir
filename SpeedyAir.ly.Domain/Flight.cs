@@ -6,9 +6,7 @@ namespace SpeedyAir.ly.Domain
     public class Flight
     {
         #region Public Members
-
-        public const int CurrentLoadLimit = Constants.CurrentLoadLimit;
-
+        
         public int Id { get; private set; }
 
         public string Departure { get; private set; } = null!;
@@ -57,8 +55,8 @@ namespace SpeedyAir.ly.Domain
 
         public void IncrementCurrentLoad()
         {
-            Guard.Against.InvalidInput(CurrentLoad, nameof(CurrentLoad), x => x < CurrentLoadLimit,
-                $"Current load: {CurrentLoad} cannot be increase beyond {CurrentLoadLimit}");
+            Guard.Against.InvalidInput(CurrentLoad, nameof(CurrentLoad), x => x < Constants.CurrentLoadLimit,
+                $"Current load: {CurrentLoad} cannot be increase beyond {Constants.CurrentLoadLimit}");
 
             CurrentLoad++;
         }
